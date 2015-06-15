@@ -70,7 +70,7 @@ log in with an administrator profile in portal
 RUN IT
 ------
 
-login as with a User profile inprotal to have new permissions in user's session
+login as with a User profile in portal to have new permissions in user's session
 
 navigate to:
 http://localhost:8080/bonita/apps/sqlDemo/example/
