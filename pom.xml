@@ -6,7 +6,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
-        <bonita.version>7.0.0-SNAPSHOT</bonita.version>
+        <bonita.version>7.0.0</bonita.version>
         <groovy.version>1.8.6</groovy.version>
     </properties>
     <dependencies>
