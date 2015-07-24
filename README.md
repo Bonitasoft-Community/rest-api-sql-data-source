@@ -12,7 +12,14 @@ git clone git@github.com:Bonitasoft-Community/rest-api-sql-data-source.git
 cd rest-api-sql-data-source
 ```
 
-adjust bonita.version properties in [pom.xml](pom.xml) if necessary. 
+in case you don't have required dependencies in your local maven repository, they are available in /lib folder
+to install them:
+
+
+```shell
+mvn install:install-file -Dfile=lib/console-server-7.0.1.jar -DgroupId=org.bonitasoft.console -DartifactId=console-server -Dversion=7.0.1 -Dpackaging=jar    
+mvn install:install-file -Dfile=lib/console-common-7.0.1.jar -DgroupId=org.bonitasoft.console -DartifactId=console-common -Dversion=7.0.1 -Dpackaging=jar
+```   
  
 run maven build
 
