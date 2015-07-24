@@ -13,6 +13,14 @@ cd rest-api-sql-data-source
 ```
 
 adjust bonita.version properties in [pom.xml](pom.xml) if necessary. 
+
+```shell
+#in case you don't have required dependencies in your local maven repository, they are available in /lib folder
+mvn install:install-file -Dfile=lib/console-server-7.0.1.jar -DgroupId=org.bonitasoft.console -DartifactId=console-server -Dversion=7.0.1 -Dpackaging=jar    
+mvn install:install-file -Dfile=lib/console-common-7.0.1.jar -DgroupId=org.bonitasoft.console -DartifactId=console-common -Dversion=7.0.1 -Dpackaging=jar
+mvn install:install-file -Dfile=lib/bonita-common-7.0.1.jar -DgroupId=org.bonitasoft.engine -DartifactId=bonita-common -Dversion=7.0.1 -Dpackaging=jar    
+mvn install:install-file -Dfile=lib/bonita-client-7.0.1.jar -DgroupId=org.bonitasoft.engine -DartifactId=bonita-client -Dversion=7.0.1 -Dpackaging=jar
+```   
  
 run maven build
 
