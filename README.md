@@ -70,7 +70,7 @@ DEPLOY RESOURCES IN PORTAL
 
 log in with an administrator profile in portal
 
-1. add resource [target/rest-api-sql-datasource.zip](target/rest-api-sql-datasource.zip) 
+1. add previously build REST API Extension located in target/rest-api-sql-datasource.zip 
 2. add page [page/page-apiExtensionDatasourceViewer.zip](page/page-apiExtensionDatasourceViewer.zip)
 3. import living application [livingApplication/Application_Data.xml](livingApplication/Application_Data.xml)
 
