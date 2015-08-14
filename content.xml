@@ -20,10 +20,4 @@
 			</includes>
 		</fileSet>
 	</fileSets>
-	<dependencySets>
-		<dependencySet>
-			<useProjectArtifact>false</useProjectArtifact>
-			<outputDirectory>/lib</outputDirectory>
-		</dependencySet>
-	</dependencySets>
 </assembly>
