@@ -39,6 +39,7 @@
             <groupId>org.bonitasoft.console</groupId>
             <artifactId>console-server</artifactId>
             <version>${bonita.version}</version>
+            <classifier>classes</classifier>
             <scope>compile</scope>
         </dependency>
 
