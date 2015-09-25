@@ -1,6 +1,20 @@
 REST API extension with SQL dataSource
 ======================================
 
+IDE SETUP
+---------
+
+## Eclipse Mars (4.5)
+
+- Go in Help > Install New Software...
+- Work with `org.codehaus.groovy.eclipse.site - http://dist.springsource.org/snapshot/GRECLIPSE/e4.5`
+- Select following features to install:
+	- Extra compiler 1.8 
+	- Groovy eclipse
+	- m2e configurator 
+- Install and restart Eclipse
+- Go to Help > Eclipse Marketplace...
+- Search for Spock Plugin and install it
 
 API EXTENSION SETUP
 --------------------
