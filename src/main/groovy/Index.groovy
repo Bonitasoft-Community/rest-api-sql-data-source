@@ -25,7 +25,7 @@ class Index implements RestApiController {
         try {
             def rows = params.isEmpty() ? sql.rows(query) : sql.rows(query, params)
             JsonBuilder builder = new JsonBuilder(rows)
-            String table = builder.toPrettyString()
+            String table = builder.toString()
             return buildResponse(apiResponseBuilder, table)
         } finally {
             sql.close()
