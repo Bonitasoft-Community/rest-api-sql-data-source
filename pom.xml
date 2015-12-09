@@ -3,18 +3,13 @@
     <groupId>org.bonitasoft.example</groupId>
     <artifactId>rest-api-sql-datasource</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+
     <properties>
-        <bonita.version>7.0.1</bonita.version>
-        <groovy.version>1.8.6-01</groovy.version>
+        <bonita.version>7.2.0-SNAPSHOT</bonita.version>
+        <groovy.version>2.4.3-01</groovy.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <repositories>
-        <repository>
-            <id>maven-restlet</id>
-            <name>Public online Restlet repository</name>
-            <url>http://maven.restlet.com</url>
-        </repository>
-    </repositories>
+    
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -26,27 +21,38 @@
             <groupId>org.bonitasoft.engine</groupId>
             <artifactId>bonita-client</artifactId>
             <version>${bonita.version}</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.bonitasoft.console</groupId>
-            <artifactId>console-server</artifactId>
+            <groupId>org.bonitasoft.web</groupId>
+            <artifactId>bonita-web-extensions</artifactId>
             <version>${bonita.version}</version>
-            <classifier>classes</classifier>
-            <scope>compile</scope>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.bonitasoft.engine</groupId>
+            <artifactId>bonita-common</artifactId>
+            <version>${bonita.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.4.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.1</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- test -->
         <dependency>
-            <groupId>org.restlet.jse</groupId>
-            <artifactId>org.restlet</artifactId>
-            <version>2.1.7</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
-            <version>0.7-groovy-1.8</version>
+            <version>1.0-groovy-2.4</version>
             <scope>test</scope>
         </dependency>
         <dependency> <!-- enables mocking of classes (in addition to interfaces) -->
@@ -61,9 +67,15 @@
             <version>1.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.6.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
-    <build>
+     <build>
         <finalName>${project.artifactId}</finalName>
         <resources>
             <resource>
@@ -110,6 +122,7 @@
                         </goals>
                         <inherited>false</inherited>
                         <configuration>
+                            <finalName>${project.build.finalName}-${project.version}</finalName>
                             <ignoreDirFormatExtensions>true</ignoreDirFormatExtensions>
                             <appendAssemblyId>false</appendAssemblyId>
                             <descriptors>
@@ -121,4 +134,5 @@
             </plugin>
         </plugins>
     </build>
+    
 </project>

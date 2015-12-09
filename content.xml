@@ -20,4 +20,14 @@
 			</includes>
 		</fileSet>
 	</fileSets>
+     <dependencySets>
+        <dependencySet>
+            <includes>
+                <include>*:jar</include>
+            </includes>
+             <useProjectArtifact>false</useProjectArtifact>
+            <scope>runtime</scope>
+            <outputDirectory>/lib</outputDirectory>
+        </dependencySet>
+    </dependencySets>
 </assembly>
