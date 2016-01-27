@@ -1,10 +1,12 @@
 REST API extension with SQL dataSource
 ======================================
 
-IDE SETUP
----------
+# Build instructions
+If you want to modify and build the project, you may follow these instructions.
+Otherwise, you can work directly with the binaries available in the [releases](../../releases).
 
-## Eclipse Mars (4.5)
+## Setup your IDE
+These instruction apply to a Eclipse Mars (4.5)
 
 - Go in Help > Install New Software...
 - Work with `org.codehaus.groovy.eclipse.site - http://dist.springsource.org/snapshot/GRECLIPSE/e4.5`
@@ -16,46 +18,41 @@ IDE SETUP
 - Go to Help > Eclipse Marketplace...
 - Search for Spock Plugin and install it
 
-API EXTENSION SETUP
---------------------
-
-clone the project
+## Retrieving the project from GitHub
+Clone the project
 
 ```shell
 git clone git@github.com:Bonitasoft-Community/rest-api-sql-data-source.git
 cd rest-api-sql-data-source
 ```
 
-in case you don't have required dependencies in your local maven repository, they are available in /lib folder
-to install them:
-
+## Building the project
+In case you don't have required dependencies in your local Maven repository, they are available in `/lib` folder.
+To install them:
 
 ```shell
 mvn install:install-file -Dfile=lib/console-server-7.0.1-classes.jar -DgroupId=org.bonitasoft.console -DartifactId=console-server -Dversion=7.0.1 -Dpackaging=jar -Dclassifier=classes
 mvn install:install-file -Dfile=lib/console-common-7.0.1.jar -DgroupId=org.bonitasoft.console -DartifactId=console-common -Dversion=7.0.1 -Dpackaging=jar
 ```   
  
-run maven build
+Build the project with Maven:
 
 ```shell
 mvn clean install
 ```
 
+# Installation instructions
 
-DATABASE SETUP
---------------
+## Setting up the database
 
-create a PostgreSQL database named "demo" owned by user "bonita" with password "bpm".
+1. Create a PostgreSQL database named `demo` owned by user `bonita` with password `bpm`.
+2. Run the [sql/createExample.sql](sql/createExample.sql) script to create the table and populate it with sample data.
 
-run script [sql/createExample.sql](sql/createExample.sql) to create table and populate sample data
+## Setting up the datasource
 
+These instruction apply to a standart Tomcat H2 bundle.
 
-DATASOURCE SETUP
-----------------
-
-create new dataSource setup with a standart tomcat H2 bundle
-
-edit file conf/Catalina/localhost/bonita.xml and add new data source:
+1. Edit the `conf/Catalina/localhost/bonita.xml` file and add new data source:
 
 ```xml
 <Resource name="demoDS"
@@ -75,26 +72,21 @@ edit file conf/Catalina/localhost/bonita.xml and add new data source:
               url="jdbc:postgresql://localhost:5432/demo"/>
 ```
 
-In folder lib/bonita add [PostgreSQL jdbc driver](https://jdbc.postgresql.org/download.html) jar
+2. In folder `lib/bonita` add the [PostgreSQL jdbc driver](https://jdbc.postgresql.org/download.html) jar
+3. Restart Tomcat
 
-Restart tomcat
+## Deploy the resources in Bonita BPM Portal
 
-DEPLOY RESOURCES IN PORTAL
---------------------------
+1. Log in with a user with Administrator profile in Bonita BPM Portal
+2. Add previously build REST API Extension located in `target/rest-api-sql-datasource.zip`
+3. Add page [page/page-apiExtensionDatasourceViewer.zip](page/page-apiExtensionDatasourceViewer.zip)
+4. Import living application [livingApplication/Application_Data.xml](livingApplication/Application_Data.xml)
 
-log in with an administrator profile in portal
+## Running the sample application
 
-1. add previously build REST API Extension located in target/rest-api-sql-datasource.zip 
-2. add page [page/page-apiExtensionDatasourceViewer.zip](page/page-apiExtensionDatasourceViewer.zip)
-3. import living application [livingApplication/Application_Data.xml](livingApplication/Application_Data.xml)
-
-RUN IT
-------
-
-login as with a User profile in portal to have new permissions in user's session
-
-navigate to:
-http://localhost:8080/bonita/apps/sqlDemo/example/
+1. Log in with a user with Administrator profile in Bonita BPM Portal
+2. Navigate to this URL (port number may vary):
+[http://localhost:8080/bonita/apps/sqlDemo/example/](http://localhost:8080/bonita/apps/sqlDemo/example/)
 
 
 
