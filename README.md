@@ -71,7 +71,7 @@ You can either retrieve the binaries from the [releases](../../releases) and unz
 
 These instructions apply to a standart Tomcat H2 bundle.
 
-- Edit the `conf/Catalina/localhost/bonita.xml` file and add new data source:
+- Edit the `conf/Catalina/localhost/bonita.xml` file and add a new datasource:
 
 ```xml
 <Resource name="demoDS"
