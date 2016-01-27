@@ -7,10 +7,11 @@ REST API extension with SQL dataSource
 1.3 Building the project<br>
 
 2 [Installation instructions](#2-installation-instructions)<br>
-2.1 Setting up the database<br>
-2.2 Setting up the datasource<br>
-2.3 Deploying the resources in Bonita BPM Portal<br>
-2.4 Running the sample application<br>
+2.1 Retrieve the binaries<br>
+2.2 Setting up the database<br>
+2.3 Setting up the datasource<br>
+2.4 Deploying the resources in Bonita BPM Portal<br>
+2.5 Running the sample application<br>
 
 
 # 1 Build instructions
@@ -57,13 +58,16 @@ mvn clean install
 
 # 2 Installation instructions
 
-## 2.1 Setting up the database
+## 2.1 Retrieve the binaries
+You can either retrieve the binaries from the [releases](../../releases) and unzip them or start from the built project (see build instructions).
+
+## 2.2 Setting up the database
 
 - Create a PostgreSQL database named `demo` owned by user `bonita` with password `bpm`.
-- Run the [sql/createExample.sql](sql/createExample.sql) script to create the table and populate it with sample data.
+- Run the `createExample.sql` script to create the table and populate it with sample data.
 
 
-## 2.2 Setting up the datasource
+## 2.3 Setting up the datasource
 
 These instructions apply to a standart Tomcat H2 bundle.
 
@@ -91,15 +95,15 @@ These instructions apply to a standart Tomcat H2 bundle.
 - Restart Tomcat
 
 
-## 2.3 Deploying the resources in Bonita BPM Portal
+## 2.4 Deploying the resources in Bonita BPM Portal
 
 - Log in with a user with Administrator profile in Bonita BPM Portal
-- Import the REST API Extension (the one you built or retrieved from the [releases](../../releases))
-- Import the sample viewer page [page/page-apiExtensionDatasourceViewer.zip](page/page-apiExtensionDatasourceViewer.zip)
-- Import the living application [livingApplication/Application_Data.xml](livingApplication/Application_Data.xml)
+- Import the REST API Extension file: `rest-api-sql-datasource.zip`
+- Import the sample viewer page `page-apiExtensionDatasourceViewer.zip`
+- Import the living application `application.xml`
 
 
-## 2.4 Running the sample application
+## 2.5 Running the sample application
 
 - Log in with a user with Administrator profile in Bonita BPM Portal
 - Navigate to this URL (port number may vary):
