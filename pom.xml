@@ -2,11 +2,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.bonitasoft.example</groupId>
     <artifactId>rest-api-sql-datasource</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
     <properties>
         <bonita.version>7.0.1</bonita.version>
         <groovy.version>1.8.6-01</groovy.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <repositories>
         <repository>
@@ -80,6 +81,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
+                    <encoding>UTF-8</encoding>
                     <source>1.7</source>
                     <target>1.7</target>
                     <compilerId>groovy-eclipse-compiler</compilerId>
