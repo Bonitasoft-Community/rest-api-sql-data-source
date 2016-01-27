@@ -1,13 +1,25 @@
 REST API extension with SQL dataSource
 ======================================
 
+1 [Build instructions](#build-instructions)<br>
+1.1 Setup your IDE<br>
+1.2 Retrieving the project from GitHub<br>
+1.3 Building the project<br>
+
+2 Installation instructions<br>
+2.1 Setting up the database<br>
+2.2 Setting up the datasource<br>
+2.3 Deploying the resources in Bonita BPM Portal<br>
+2.4 Running the sample application<br>
+
+
 # 1 Build instructions
 If you want to modify and build the project, you may follow these instructions.
 Otherwise, you can work directly with the binaries available in the [releases](../../releases).
 
 
-## 1.2 Setup your IDE
-These instruction apply to a Eclipse Mars (4.5)
+## 1.1 Setup your IDE
+These instructions apply to a Eclipse Mars (4.5)
 
 - Go in Help > Install New Software...
 - Work with `org.codehaus.groovy.eclipse.site - http://dist.springsource.org/snapshot/GRECLIPSE/e4.5`
@@ -20,7 +32,7 @@ These instruction apply to a Eclipse Mars (4.5)
 - Search for Spock Plugin and install it
 
 
-## 1.3 Retrieving the project from GitHub
+## 1.2 Retrieving the project from GitHub
 Clone the project
 
 ```shell
@@ -28,7 +40,7 @@ git clone git@github.com:Bonitasoft-Community/rest-api-sql-data-source.git
 cd rest-api-sql-data-source
 ```
 
-## 1.4 Building the project
+## 1.3 Building the project
 In case you don't have required dependencies in your local Maven repository, they are available in `/lib` folder.
 To install them:
 ```shell
@@ -43,7 +55,7 @@ mvn clean install
 - Retrieve the generated REST API extension zip: `target/rest-api-sql-datasource.zip`
 
 
-# 2. Installation instructions
+# 2 Installation instructions
 
 ## 2.1 Setting up the database
 
@@ -53,7 +65,7 @@ mvn clean install
 
 ## 2.2 Setting up the datasource
 
-These instruction apply to a standart Tomcat H2 bundle.
+These instructions apply to a standart Tomcat H2 bundle.
 
 - Edit the `conf/Catalina/localhost/bonita.xml` file and add new data source:
 
@@ -79,7 +91,7 @@ These instruction apply to a standart Tomcat H2 bundle.
 - Restart Tomcat
 
 
-## 2.3 Deploy the resources in Bonita BPM Portal
+## 2.3 Deploying the resources in Bonita BPM Portal
 
 - Log in with a user with Administrator profile in Bonita BPM Portal
 - Import the REST API Extension (the one you built or retrieved from the [releases](../../releases))
