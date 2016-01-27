@@ -6,7 +6,7 @@ REST API extension with SQL dataSource
 1.2 Retrieving the project from GitHub<br>
 1.3 Building the project<br>
 
-2 [Installation instructions](#2-installation instructions)<br>
+2 [Installation instructions](#2-installation-instructions)<br>
 2.1 Setting up the database<br>
 2.2 Setting up the datasource<br>
 2.3 Deploying the resources in Bonita BPM Portal<br>
