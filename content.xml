@@ -7,17 +7,28 @@
 	<fileSets>
 		<fileSet>
 			<directory>${project.basedir}/src/main/groovy</directory>
-			<outputDirectory>/</outputDirectory>
+			<outputDirectory></outputDirectory>
 			<includes>
 				<include>**/*</include>
 			</includes>
 		</fileSet>
 		<fileSet>
 			<directory>${project.basedir}/src/main/resources</directory>
-			<outputDirectory>/</outputDirectory>
+			<outputDirectory></outputDirectory>
 			<includes>
 				<include>**/*</include>
 			</includes>
 		</fileSet>
 	</fileSets>
+	<!-- To include REST API extension dependencies (delcared in Maven pom.xml) in the packaged zip file -->
+	<dependencySets>
+		<dependencySet>
+			<includes>
+				<include>*:jar</include>
+			</includes>
+			<useProjectArtifact>false</useProjectArtifact>
+			<scope>runtime</scope>
+			<outputDirectory>/lib</outputDirectory>
+		</dependencySet>
+	</dependencySets>
 </assembly>

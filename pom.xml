@@ -2,69 +2,72 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.bonitasoft.example</groupId>
     <artifactId>rest-api-sql-datasource</artifactId>
-    <version>1.0</version>
-    <packaging>jar</packaging>
+    <version>2.0-SNAPSHOT</version>
     <properties>
-        <bonita.version>7.0.1</bonita.version>
-        <groovy.version>1.8.6-01</groovy.version>
+        <bonita.version>7.2.3</bonita.version>
+        <groovy.version>2.4.3</groovy.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <repositories>
-        <repository>
-            <id>maven-restlet</id>
-            <name>Public online Restlet repository</name>
-            <url>http://maven.restlet.com</url>
-        </repository>
-    </repositories>
-    <dependencies>
+
+    <dependencies>    
+        <!-- Definition of REST API extension interface -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <groupId>org.bonitasoft.web</groupId>
+            <artifactId>bonita-web-extensions</artifactId>
+            <version>${bonita.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- REST API extension use Groovy -->
         <dependency>
-            <groupId>org.bonitasoft.engine</groupId>
-            <artifactId>bonita-client</artifactId>
-            <version>${bonita.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.bonitasoft.console</groupId>
-            <artifactId>console-server</artifactId>
-            <version>${bonita.version}</version>
-            <classifier>classes</classifier>
-            <scope>compile</scope>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>${groovy.version}</version>
+            <scope>provided</scope>
         </dependency>
 
-        <!-- test -->
+        <!-- We use SLF4J to produce logs in REST API extension -->
         <dependency>
-            <groupId>org.restlet.jse</groupId>
-            <artifactId>org.restlet</artifactId>
-            <version>2.1.7</version>
-            <scope>test</scope>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.1</version>
+            <scope>provided</scope>
         </dependency>
+
+        <!-- Test libraries -->
         <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
-            <version>0.7-groovy-1.8</version>
+            <version>1.0-groovy-2.4</version>
             <scope>test</scope>
         </dependency>
-        <dependency> <!-- enables mocking of classes (in addition to interfaces) -->
+
+        <!-- Enables mocking of classes (in addition to interfaces) -->
+        <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib-nodep</artifactId>
             <version>2.2</version>
             <scope>test</scope>
         </dependency>
-        <dependency> <!-- enables mocking of classes without default constructor (together with CGLIB) -->
+
+        <!-- Enables mocking of classes without default constructor (together with CGLIB) -->
+        <dependency>
             <groupId>org.objenesis</groupId>
             <artifactId>objenesis</artifactId>
             <version>1.2</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- When we run test we use SLF4J implementation that send logs to standard error output (System.err) -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.6.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
-    <build>
+     <build>
         <finalName>${project.artifactId}</finalName>
         <resources>
             <resource>
@@ -79,7 +82,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+                <version>3.5.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <source>1.7</source>
@@ -95,14 +98,14 @@
                     <dependency>
                         <groupId>org.codehaus.groovy</groupId>
                         <artifactId>groovy-eclipse-batch</artifactId>
-                        <version>${groovy.version}</version>
+                        <version>${groovy.version}-01</version>
                     </dependency>
                 </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4.1</version>
+                <version>2.6</version>
                 <executions>
                     <execution>
                         <id>page-content</id>
@@ -112,6 +115,7 @@
                         </goals>
                         <inherited>false</inherited>
                         <configuration>
+                            <finalName>${project.build.finalName}-${project.version}</finalName>
                             <ignoreDirFormatExtensions>true</ignoreDirFormatExtensions>
                             <appendAssemblyId>false</appendAssemblyId>
                             <descriptors>
@@ -123,4 +127,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

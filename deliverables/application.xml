@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <applications xmlns="http://documentation.bonitasoft.com/application-xml-schema/1.0">
     <application token="sqlDemo" version="1.0" profile="User" homePage="example" state="ACTIVATED" layout="custompage_layout" theme="custompage_theme">
-        <displayName>REST API example with sql datasource</displayName>
-        <description>Living app example with a rest api extension calling sql datasource</description>
+        <displayName>REST API extension example with SQL data source</displayName>
+        <description>Application example with a REST API extension executing SQL queries using data source</description>
         <iconPath></iconPath>
         <applicationPages>
             <applicationPage customPage="custompage_apiExtensionDatasourceViewer" token="example"/>
