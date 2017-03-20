@@ -83,9 +83,9 @@ You can either retrieve the binaries from the [releases](../../releases) and unz
 ### Configure REST API authorization
 
 - Only if you are deploying the REST API extension in the Tomcat embedded in Bonita BPM Studio:
-  - Go in `workspace/tomcat/setup`
+  - Go in `<Bonita_Studio_Path>/workspace/tomcat/setup`
   - Edit `database.properties` file
-  - Set the `h2.database` property with the full path to the `h2_database` folder located in `workspace/default` folder (replace the existing `../h2_database` default value).
+  - Set the `h2.database` property with the full path to the `h2_database` folder located in `<Bonita_Studio_Path>/workspace/default` folder (replace the existing `../h2_database` default value).
   - If you are using Mac or Linux, make sure that setup.sh is executable: `chmod u+x setup.sh`.
 - Run the setup tool to retrieve the configuration: `setup.bat pull` (Windows), `setup.sh pull` (Mac, Linux).
 - Edit `custom-permissions-mapping.properties` file located in `tenants/1/tenant_portal` directory. When you pull the configuration with the "setup" tool, `tenants` folder is located in `setup/platform_conf_current`.
@@ -130,7 +130,7 @@ These instructions apply to Tomcat.
 - Switch to administrator view.
 - Go to "Resources" and click on the "Add" button to import the REST API Extension file: `rest-api-sql-datasource.zip`.
 - Import the sample viewer page `page-apiExtensionDatasourceViewer.zip`
-- Go to "Applications" and import the living application `application.xml`
+- Go to "Applications" and import the Living Application `application.xml`
 
 
 ### Running the sample application
