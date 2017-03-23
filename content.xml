@@ -20,7 +20,9 @@
 			</includes>
 		</fileSet>
 	</fileSets>
-	<!-- To include REST API extension dependencies (delcared in Maven pom.xml) in the packaged zip file -->
+	<!-- To include REST API extension dependencies (declared in Maven pom.xml) in the packaged zip file -->
+	<!-- Not required by REST API SQL data source example -->
+	<!-- 
 	<dependencySets>
 		<dependencySet>
 			<includes>
@@ -31,4 +33,5 @@
 			<outputDirectory>/lib</outputDirectory>
 		</dependencySet>
 	</dependencySets>
+	-->
 </assembly>
