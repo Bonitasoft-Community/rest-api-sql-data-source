@@ -1,3 +1,4 @@
+<!-- Maven assembly plugin configuration file used by Maven to package the REST API extension -->
 <assembly>
 	<id>page-package</id>
 	<formats>

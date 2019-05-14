@@ -2,16 +2,16 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.bonitasoft.example</groupId>
     <artifactId>rest-api-sql-datasource</artifactId>
-    <version>2.1-SNAPSHOT</version>
+    <version>2.2-SNAPSHOT</version>
     
     <properties>
-        <bonita.version>7.4.2</bonita.version>
+        <bonita.version>7.8.4</bonita.version>
         
         <!--  Stick with 2.4.3 version instead of Bonita BPM 2.4.4 version due to groovy-eclipse-batch dependency -->
         <groovy.version>2.4.3</groovy.version>
         
         <!-- Make sure this version is in line with Bonita BPM SLF4J version -->
-        <slf4j.version>1.6.1</slf4j.version>
+        <slf4j.version>1.7.25</slf4j.version>
         
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -89,7 +89,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>3.8.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <source>1.8</source>
@@ -112,7 +112,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.1</version>
                 <executions>
                     <execution>
                         <id>page-content</id>
